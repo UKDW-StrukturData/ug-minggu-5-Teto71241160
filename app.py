@@ -7,11 +7,27 @@ def load_news(filename):
     # TODO: buka file CSV (filename) dan baca dengan csv.DictReader
     # kembalikan hasilnya dalam bentuk list
     pass
+    with open('news_data.csv', 'r', newline='') as filename:
+        reader = csv.DictReader(filename)
+        for i in reader:
+            print('idBerita', i['idBerita'])
+            print('Headline', i['Headline'])
+            print('Content', i['Content'])
+            print()
 
+        
 def load_comments(filename):
     """Baca file comment_news.csv ke list of dict"""
     # TODO: sama seperti load_news tapi untuk file komentar
     pass
+    with open('comment_news.csv', 'r', newline='') as filename:
+        reader = csv.DictReader(filename)
+        for i in reader:
+            print('idKomentar', i['idKomentar'])
+            print('idBerita', i['idBerita'])
+            print('Komentar', i['Komentar'])
+            print('Rating', i['Rating'])
+            print()
 
 # --- Fungsi untuk memproses data ---
 def process_data(news_list, comments_list):
